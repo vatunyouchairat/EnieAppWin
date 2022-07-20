@@ -1,19 +1,22 @@
-import 'package:enie/utillity/my_constant.dart';
 import 'package:flutter/material.dart';
+
+import 'package:enie/utillity/my_constant.dart';
 
 class ShowButton extends StatelessWidget {
   final String label;
   final Function() pressFunc;
+  final double? size;
   const ShowButton({
     Key? key,
     required this.label,
     required this.pressFunc,
+    this.size,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 250,
+      width: size ?? 250,
       height: 40,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
